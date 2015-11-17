@@ -2,6 +2,7 @@
 
 Continous Bag-of-words model (CBOW)
 
+Please do read the actual papers:
 1. http://arxiv.org/pdf/1301.3781.pdf
 2. http://cs224d.stanford.edu/lecture_notes/LectureNotes1.pdf
 
