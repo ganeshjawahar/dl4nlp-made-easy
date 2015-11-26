@@ -1,3 +1,1 @@
-## Toy torch codes for Natural Language Processing<br />
-
-This repository will host sample codes for the state-of-the-art models in NLP. <br />
+## Toy torch codes for models used in Natural Language Processing<br />
