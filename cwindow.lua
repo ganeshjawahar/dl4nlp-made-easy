@@ -1,12 +1,11 @@
 --[[
 
------------------------------------
-Continous Bag-of-words model (CBOW)
------------------------------------
+----------------------
+Continous Window model
+----------------------
 
 References:
-1. http://arxiv.org/pdf/1301.3781.pdf
-2. http://cs224d.stanford.edu/lecture_notes/LectureNotes1.pdf
+1. http://www.cs.cmu.edu/~lingwang/papers/naacl2015.pdf
 
 ]]--
 
@@ -47,8 +46,8 @@ function dataset:size() return 2 end -- define the number of input samples in yo
 -- Define your model
 model = nn.Sequential()
 model:add(nn.LookupTable(vocab_size, word_embed_size)) -- consumes the word indices and outputs the embeddings
-model:add(nn.Mean()) -- 'averaging' loses the word order
-model:add(nn.Linear(word_embed_size, vocab_size)) -- projects to |V| size representation.
+model:add(nn.View(window_size * word_embed_size)) -- concatenate the context to capture the word order.
+model:add(nn.Linear(window_size * word_embed_size, vocab_size)) -- projects concatenated context to |V| size representation.
 model:add(nn.LogSoftMax()) -- converts the representation to probability distribution
 
 -- Define the loss function (Negative log-likelihood)

@@ -1,12 +1,11 @@
 --[[
 
----------
-Skip-Gram
----------
+--------------------
+Structured Skip-Gram
+--------------------
 
 References:
-1. http://arxiv.org/pdf/1301.3781.pdf
-2. http://cs224d.stanford.edu/lecture_notes/LectureNotes1.pdf
+1. http://www.cs.cmu.edu/~lingwang/papers/naacl2015.pdf
 
 ]]--
 
@@ -55,7 +54,7 @@ word_lookup = nn.LookupTable(vocab_size, word_embed_size)
 context_model = nn.Sequential()
 context_model:add(nn.Linear(word_embed_size, vocab_size))
 context_model:add(nn.LogSoftMax())
-context_model_2 = context_model:clone('weight','bias','gradWeight','gradBias') -- cloning the context model lookup and sharing the layer parameters.
+context_model_2 = context_model:clone() -- cloning the context model lookup and NOT sharing the layer parameters.
 model = nn.Sequential()
 model:add(word_lookup) -- first layer consumes the word index and outputs the emebedding
 model:add(nn.ConcatTable()) -- branches the input to 'window_size' paths
