@@ -31,9 +31,8 @@ function GRU.gru(input_size, rnn_size, n, dropout)
 
     local prev_h = inputs[L+1]
     -- the input to this layer
-    if L == 1 then       
-      x=inputs[1] 
-      --x = OneHot(input_size)(inputs[1])  
+    if L == 1 then
+      x = OneHot(input_size)(inputs[1])  
       input_size_L = input_size
     else 
       x = outputs[(L-1)] 

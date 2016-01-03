@@ -24,8 +24,7 @@ function LSTM.lstm(input_size, rnn_size, n, dropout)
     local prev_c = inputs[L*2]
     -- the input to this layer
     if L == 1 then 
-      x=inputs[1] 
-      --x = OneHot(input_size)(inputs[1])
+      x = OneHot(input_size)(inputs[1])
       input_size_L = input_size
     else 
       x = outputs[(L-1)*2] 
