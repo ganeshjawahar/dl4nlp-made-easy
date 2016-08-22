@@ -7,3 +7,4 @@
 | `paragraph2vec/`                        | **Distributed Representations of Sentences and Documents**, *ICML 2014*.                      |
 | `two_simple/`                           | **Two/Too Simple Adaptations of Word2Vec for Syntax Problems**, *NAACL 2015*.                 |
 | `char_rnn/`                             | **Visualizing and Understanding Recurrent Networks**, *ICLR 2016 (under review)*.             |
+For queries, send me a mail at ganeshjwhr@gmail.com
